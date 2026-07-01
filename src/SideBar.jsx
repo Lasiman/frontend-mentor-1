@@ -1,19 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Menu from './components/Menu'
 import icon from './assets/logo.svg'
-import spark from './assets/icon-sparkle.svg'
+import menu from './assets/icon-menu.svg'
 
 const SideBar = () => {
+    const [open, setOpen] = useState(false)
     return (
-        <section className='w-[20%] max-mobile:w-full h-screen p-3 border-r border-neutral-400'>
-            <div className='w-full border-b border-neutral-400 pb-3'>
+        <section className='w-[20%] max-mobile:w-full h-screen p-3 border-r border-neutral-400 flex flex-col'>
+            <div className='w-full border-b border-neutral-400 pb-3 flex justify-between'>
                 <img src={icon} />
+                {!open && <img src={menu} className='w-[2rem] cursor-pointer'/>}
             </div>
-            <div className='flex flex-col justify-between'>
+
+            <div className='flex-1 flex flex-col justify-between'>
                 <Menu></Menu>
-                <div>
-                    <div className={`bg-[url(favicon-32x32.png)] w-full h-full`}>
-                        aaaaaaaa
+                <div className='flex flex-col gap-5'>
+                    <div className={` bg-[url(../public/icon-weather.svg)] w-full h-full bg-no-repeat bg-contain bg-position-[110%_-2rem] bg-sun-300 rounded-2xl px-5 py-3 `}>
+                        <p className='font-dmMono'>TODAY IN CASSIS</p>
+                        <p className='font-fraunces text-3xl'>27°</p>
+                        <p className='font-dmSans'>Sunny - light breeze</p>
+                    </div>
+                    <div className='font-dmMono text-neutral-500 flex flex-col gap-2 mb-5'>
+                        <p>EST. 1987</p>
+                        <p>MAISON SOLEIL • 12 RUE DES OLIVIERS • CASIS</p>
+                        <p>© 2026 MAISON SOLEIL</p>
                     </div>
                 </div>
             </div>
