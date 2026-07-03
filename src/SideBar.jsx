@@ -1,18 +1,24 @@
 import React, { useState } from 'react'
 import Menu from './components/Menu'
+import close from './assets/icon-close.svg'
 import icon from './assets/logo.svg'
 import menu from './assets/icon-menu.svg'
 
 const SideBar = () => {
     const [open, setOpen] = useState(false)
+
+    const handleClick = () => {
+        setOpen( () => !open)
+    }
     return (
-        <section className='w-[20%] max-mobile:w-full h-screen p-3 border-r border-neutral-400 flex flex-col'>
+        <section className='w-[20%] max-mobile:w-full mobile:h-screen p-3 border-r border-neutral-400 flex flex-col'>
             <div className='w-full border-b border-neutral-400 pb-3 flex justify-between'>
                 <img src={icon} />
-                {!open && <img src={menu} className='w-[2rem] cursor-pointer'/>}
+                {!open && <img src={menu} onClick={handleClick} className='w-[2rem] cursor-pointer mobile:hidden'/>}
+                {open && <img src={close} onClick={handleClick} className='w-[2rem] cursor-pointer mobile:hidden'/>}
             </div>
 
-            <div className='flex-1 flex flex-col justify-between'>
+            <div className={`flex-1 mobile:flex flex flex-col justify-between ${open ? 'block' : 'hidden'} `}>
                 <Menu></Menu>
                 <div className='flex flex-col gap-5'>
                     <div className={` bg-[url(../public/icon-weather.svg)] w-full h-full bg-no-repeat bg-contain bg-position-[110%_-2rem] bg-sun-300 rounded-2xl px-5 py-3 `}>
