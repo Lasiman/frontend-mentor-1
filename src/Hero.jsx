@@ -3,6 +3,7 @@ import Header from './components/Header'
 import HeroContent from './components/HeroContent'
 import Card1 from './components/Card1'
 import Card2 from './components/Card2'
+import barcode from '../assets/icon-barcode.svg'
 
 const Hero = () => {
     return (
@@ -12,7 +13,12 @@ const Hero = () => {
                 <Card1></Card1>
                 <Card2></Card2>
             </section>
-            <HeroContent></HeroContent>
+            <div>
+                <HeroContent nama='ARRIVAL' no='01' image='../assets/icon-key.svg' judul='Check-in from 15:00' teks='Sat, 25 April' variant='red'>a;izsajg;rpoaifvj</HeroContent>
+                <link src='../assets/icon-key.svg' className='bg-black'/>
+                <img src={barcode}/>
+
+            </div>
         </section>
     )
 }
