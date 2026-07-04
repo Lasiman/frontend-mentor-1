@@ -11,7 +11,7 @@ const SideBar = () => {
         setOpen( () => !open)
     }
     return (
-        <section className='w-[20%] max-mobile:w-full mobile:h-screen p-3 border-r border-neutral-400 flex flex-col'>
+        <section className='w-[20%] max-mobile:w-full bg-neutral-100 z-20 mobile:h-screen p-3 border-r border-neutral-400 flex flex-col sticky top-0'>
             <div className='w-full border-b border-neutral-400 pb-3 flex justify-between'>
                 <img src={icon} />
                 {!open && <img src={menu} onClick={handleClick} className='w-[2rem] cursor-pointer mobile:hidden'/>}

@@ -6,9 +6,9 @@ import Card2 from './components/Card2'
 
 const Hero = () => {
     return (
-        <section className='desktop:w-[80%] w-screen p-5 mobile:p-7 bg-amber-500'>
+        <section className='desktop:w-[80%] w-full p-5 mobile:p-7'>
             <Header></Header>
-            <section className='bg-amber-700 w-ful min-h-[25rem]'>
+            <section className='flex items-center justify-center max-mobile:flex-col mt-10 '>
                 <Card1></Card1>
                 <Card2></Card2>
             </section>

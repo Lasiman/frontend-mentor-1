@@ -5,6 +5,10 @@
 
 
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 @theme{
 
     /* color */
@@ -41,7 +45,7 @@
     --text-paragraph : 14px;
 
     /* screen */
-    --breakpoint-mobile: 375px;
+    --breakpoint-mobile: 400px;
     --breakpoint-desktop: 1440px;
     
 }
